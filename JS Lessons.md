@@ -102,3 +102,19 @@
 #074 - Higher Order Functions - Filter Practice
 #075 - Higher Order Functions - Reduce
 #076 - Higher Order Functions - Reduce Practice
+
+<!--Uploading to github  -->
+
+If you create or edit new files, follow these steps to upload your changes to GitHub:
+
+Check what changed
+git status
+
+Add all new and changed files
+git add .
+
+Commit your changes with a message
+git commit -m "Describe your changes, e.g. Add week 11 lessons and update assignments"
+
+Push your changes to GitHub
+git push

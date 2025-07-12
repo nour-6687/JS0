@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>challenge vid 70</title>
+  </head>
+  <body>
+    <a
+      href="https://elzero.org/javascript-2021-arrow-function-challenge/"
+      target="_blank"
+      rel="noopener noreferrer"
+      >challenge link</a
+    >
+    <script>
+      /*
+  Function Arrow Challenges
+*/
+
+      // [1] One Statement In Function1
+      // [2] Convert To Arrow Function
+      // [3] Print The Output [Arguments May Change]
+
+      // let names = function () {
+      //   // Parameter ?
+
+      //   return "";
+      // };
+      let names = (...names2) => `String [${names2.join("], [")}] => Done !`;
+      console.log(names("Osama", "Mohamed", "Ali", "Ibrahim"));
+      // String [Osama], [Mohamed], [Ali], [Ibrahim] => Done !
+
+      /* ================================= */
+
+      // [1] Replace ??? In Return Statement To Get The Output
+      // [2] Create The Same Function With Regular Syntax
+      // [3] Use Array Inside The Arguments To Get The Output
+
+      let myNumbers = [20, 50, 10, 60];
+
+      let calc = (one, two, ...nums) => nums[+false] + one + two;
+
+      console.log(calc(20, 50, 10, 60)); // 80
+    </script>
+  </body>
+</html>

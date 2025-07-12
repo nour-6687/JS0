@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <script>
+    /*
+first line
+[++a] 
+    value = 11
+    explanation: pre increment
+[+] 
+    addition Operator
+[+b++] [+]
+    value = 20
+    explanation: post increment
+    [+]= unary operator makes the string to number
+
+[+] addition operator
+[+c++]
+    value = 80
+    explanation: post increment
+
+[-] subtraction operator
+
+[+a++]
+    value = 11
+    explain: post increment makes a equals 11 but not be printed
+
+        total value = 11 + 20 + 80 - 11 = 100
+*/
+/*
+second line
+    [++a]
+    value = 11
+    explain: ++ are pre increment that adds  1 before the operation 
+
+    [+] addition operator
+
+    [-b]
+    value= -20
+    explain: - is a unary operator that negates the b string but it gives a number
+
+    [+c++]
+    value= 80 
+    explain: [++] are post increment the value after operation is 81 but not used
+
+    [-] subtraction operator
+    
+    [a++]
+    value = 12
+    explain : [++] are post increment the value after operation is 13 but not used
+
+    [+] addition operator
+
+    [+a]
+    value = 13
+    explain: because it was operated previously as 13 
+
+    total value = 11 + 20 + 80 - 12 + 13 = 71
+*/
+/*
+third line
+[--c]
+value = 79 vv
+explain: [--] are pre decrement that subtracts 80 to 79
+
+    [+] addition operator
+    
+    [+b] 
+    value = 20 
+    as number because of [+] unary that converts string to number vv
+
+    [--a] [--]
+    value= 9 vv
+    explain: pre decrement that subtracts 10 to 9
+
+    [*] multiplication operation
+    [+] addition operation
+    
+    [+b][++]
+    value = 20 vv
+    explain: post increment makes its value to 21 but not used
+    [-] subtraction operator
+    [+b]
+    value= -21 
+    explain: as it was 21 from the previous operation but negated because of [-]
+    [*] multiplication operation
+
+    [a]
+    value = 9 [{-21*9 = -189}]
+    [+] addition operation
+    [--a]
+    value = 8 vv
+    explain : because of prev pre decrement 
+    [+] addition operation
+
+    true
+    value= 1
+
+    total value 
+            79 + 20 + 9 * 20 - 189 + 8 + 1
+    */
+// ? CHALLENGE 2
+let d = "-100"
+let e = "20"
+let f = 30
+let g = true
+
+console.log(-+d * +e); // 2000
+console.log(++e * ++g + -d + ++f); //173
+console.log((+e * f) - (-d) - g);
+   </script>
+</body>
+</html>

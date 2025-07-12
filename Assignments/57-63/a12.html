@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>a12</title>
+  </head>
+  <body>
+    <script>
+      document.writeln(`<h2>Task 1</h2>`);
+      function sayHello(theName, theGender) {
+        // Your Code Here
+        if (theGender === "Male") {
+          document.writeln(`<p>Hello Mr ${theName}</p>`);
+        } else if (theGender === "Female") {
+          document.writeln(`<p>Hello Miss ${theName}</p>`);
+        } else {
+          document.writeln(`<p>Hello ${theName}</p>`);
+        }
+      }
+
+      // Needed Output
+      sayHello("Osama", "Male"); // "Hello Mr Osama"
+      sayHello("Eman", "Female"); // "Hello Miss Eman"
+      sayHello("Sameh"); // "Hello Sameh"
+
+      document.writeln(`<hr>`);
+      document.writeln(`<h2>Task 2</h2>`);
+
+      function calculate(firstNum, secondNum, operation) {
+        // Your Code Here
+        if (secondNum === undefined) {
+          return document.writeln(`<p>Second Number Not Found</p>`);
+        } else if (operation === "add" || operation === undefined) {
+          result = firstNum + secondNum;
+          return document.writeln(`<p>${result}</p>`);
+        } else if (operation === "subtract") {
+          result = firstNum - secondNum;
+          return document.writeln(`<p>${result}</p>`);
+        } else if (operation === "multiply") {
+          result = firstNum * secondNum;
+          return document.writeln(`<p>${result}</p>`);
+        }
+      }
+
+      // Needed Output
+      calculate(20); // Second Number Not Found
+      calculate(20, 30); // 50
+      calculate(20, 30, "add"); // 50
+      calculate(20, 30, "subtract"); // -10
+      calculate(20, 30, "multiply"); // 600
+
+      document.writeln(`<hr>`);
+      document.writeln(`<h2>Task 3</h2>`);
+
+      function ageInTime(theAge) {
+        // Your Code Here
+        if (theAge > 10 && theAge < 100) {
+          ageInMonths = theAge * 12;
+          ageInWeeks = ageInMonths * 4;
+          ageInDays = ageInWeeks * 7;
+          ageInHours = ageInDays * 24;
+          ageInMinutes = ageInHours * 60;
+          ageInSeconds = ageInMinutes * 60;
+          document.writeln(`<p>Your age in Months : ${ageInMonths}. </p>`);
+          document.writeln(`<p>Your age in Weeks : ${ageInWeeks}. </p>`);
+          document.writeln(`<p>Your age in Days : ${ageInDays}. </p>`);
+          document.writeln(`<p>Your age in Hours : ${ageInHours}. </p>`);
+          document.writeln(`<p>Your age in Minutes : ${ageInMinutes}. </p>`);
+          document.writeln(`<p>Your age in Seconds : ${ageInSeconds}. </p>`);
+        } else {
+          document.writeln(`<p>Age Out Of Range</p>`);
+        }
+      }
+      // Needed Output
+      ageInTime(110); // Age Out Of Range
+      ageInTime(38); // Months Example => 456 Months
+
+      document.writeln(`<hr>`);
+      document.writeln(`<h2>Task 4</h2>`);
+
+      function checkStatus(a, b, c) {
+        // Your Code Here
+        let name;
+        let age;
+        let status;
+
+        typeof a === "string"
+          ? (name = a)
+          : typeof a === "number"
+          ? (age = a)
+          : (status = a);
+        typeof b === "string"
+          ? (name = b)
+          : typeof b === "number"
+          ? (age = b)
+          : (status = b);
+        typeof c === "string"
+          ? (name = c)
+          : typeof c === "number"
+          ? (age = c)
+          : (status = c);
+
+        status === true
+          ? (status = "You Are Available For Hire")
+          : (status = "You Are Not Available For Hire");
+        document.write(`<p>"Hello ${name}, Your Age Is ${age}, ${status}"</p>`);
+      }
+
+      // Needed Output
+      checkStatus("Osama", 38, true); // "Hello Osama, Your Age Is 38, You Are Available For Hire"
+      checkStatus(38, "Osama", true); // "Hello Osama, Your Age Is 38, You Are Available For Hire"
+      checkStatus(true, 38, "Osama"); // "Hello Osama, Your Age Is 38, You Are Available For Hire"
+      checkStatus(false, "Osama", 38); // "Hello Osama, Your Age Is 38, You Are Not Available For Hire"
+
+      document.writeln(`<hr>`);
+      document.writeln(`<h2>Task 5</h2>`);
+
+      function createSelectBox(startYear, endYear) {
+        // Your Code Here
+        document.writeln(`<select>`);
+        for (let i = startYear; i <= endYear; i++) {
+          document.writeln(`<option value = "${i}">${i}</option>`);
+        }
+        document.writeln(`</select>`);
+      }
+      createSelectBox(2000, 2021);
+
+      document.writeln(`<hr>`);
+      document.writeln(`<h2>Task 6</h2>`);
+
+      function multiply(...numbers) {
+        let res = 1; // Start with 1 for multiplication
+        for (let i = 0; i < numbers.length; i++) {
+          if (typeof numbers[i] === "string") {
+            continue;
+          } else {
+            // Convert float to integer and multiply with result
+            res *= Math.floor(numbers[i]);
+          }
+        }
+        return res; // Return outside the loop with correct variable name
+      }
+      document.writeln(multiply(10, 20));
+      document.writeln(multiply("A", 10, 30));
+      document.writeln(multiply(100.5, 10, "B"));
+    </script>
+  </body>
+</html>

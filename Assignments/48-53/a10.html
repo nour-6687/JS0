@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // Task 1
+      let start = 10;
+      let end = 100;
+      let exclude = 40;
+
+      for (let i = start; i <= end; i += start) {
+        if (i === exclude) {
+          continue;
+        }
+        console.log(i);
+      }
+
+      console.log("-".repeat(40));
+
+      // Task 2
+      let start2 = 10;
+      let end2 = 0;
+      let stop2 = 3;
+
+      for (let i2 = start2; i2 >= end2; i2 -= 1) {
+        if (i2 < stop2) {
+          break;
+        }
+        i2 < start2 ? console.log(`${end2}${i2}`) : console.log(i2);
+      }
+
+      console.log("-".repeat(40));
+
+      // Task 3
+      let start3 = 1;
+      let end3 = 6;
+      let breaker3 = 2;
+
+      for (let i3 = start3; i3 <= end3; i3++) {
+        console.log(i3);
+        for (let j3 = breaker3; j3 <= end3 - breaker3; j3 += 2)
+          console.log(`-- ${j3}`);
+      }
+
+      console.log("-".repeat(40));
+
+      // Task 4
+      let index = 10;
+      let jump = 2;
+
+      for (;;) {
+        // Write Your Code Here
+        console.log(index);
+        index -= 2;
+        if (index <= jump) {
+          break;
+        }
+      }
+
+      console.log("-".repeat(40));
+
+      // Task 5
+      let friends = [
+        "Ahmed",
+        "Sayed",
+        "Eman",
+        "Mahmoud",
+        "Ameer",
+        "Osama",
+        "Sameh",
+      ];
+      let letter = "a";
+      counter = letter.length;
+
+      for (let i5 = letter.length - letter.length; i5 < friends.length; i5++) {
+        if (friends[i5].charAt(0) === letter.toLocaleUpperCase()) {
+          continue;
+        }
+        console.log(`${counter++} => ${friends[i5]}`);
+      }
+
+      console.log("-".repeat(40));
+
+      // Task 6
+      let start6 = 0;
+      let swappedName = "elZerO";
+      let result = "";
+      for (let i6 = start6; i6 < swappedName.length; i6++) {
+        if (swappedName[i6] === swappedName[i6].toLocaleLowerCase()) {
+          result += swappedName[i6].toUpperCase();
+        } else if (swappedName[i6] === swappedName[i6].toUpperCase()) {
+          result += swappedName[i6].toLocaleLowerCase();
+        }
+      }
+      console.log(result);
+
+      console.log("-".repeat(40));
+
+      // Task 7
+      let start7 = 0;
+      let mix = [1, 2, 3, "A", "B", "C", 4];
+      for (let i7 = mix[start7]; i7 < mix.length; i7++) {
+        if (typeof mix[i7] === "string") {
+          continue;
+        }
+        console.log(mix[i7]);
+      }
+    </script>
+  </body>
+</html>

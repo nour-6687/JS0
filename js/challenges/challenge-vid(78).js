@@ -17,25 +17,29 @@
 
 */
 
-// let myString = "1,2,3,EE,l,z,e,r,o,_,W,e,b,_,S,c,h,o,o,l,2,0,Z";
-
-// let solution = myString
-//   .split(",")
-//   .filter(function (ele) {
-//     return isNaN(ele) ;
-//   })
-//   .map(function (ele) {
-//     return ele === "_" ? " " : ele;
-//   })
-//   .slice(0,-1)
-//   .join("");
-
-// console.log(solution); // Elzero Web School
-
 let myString = "1,2,3,EE,l,z,e,r,o,_,W,e,b,_,S,c,h,o,o,l,2,0,Z";
 
 let solution = myString
   .split(",")
-  .filter((ele) => isNaN(Number(ele)))
-  .map((ele) => (ele === "_" ? " " : ele))
-  .reduce((acc, current) => `${acc}${current}`);
+  .filter(function (ele) {
+    return isNaN(ele);
+  })
+  .map(function (ele) {
+    return ele === "_" ? " " : ele;
+  })
+  .join("")
+  .slice(true, -isNaN(myString));
+
+console.log(solution); // Elzero Web School
+
+// let myString = "1,2,3,EE,l,z,e,r,o,_,W,e,b,_,S,c,h,o,o,l,2,0,Z";
+// let solution = myString
+//     .split(",")
+//     .filter((ele) => isNaN(ele))
+//     .map((ele) => ele === "_" ? " " : ele)
+//     .reduce((acc, current) => `${acc}${current}`)
+//     .slice(true, -isNaN(myString));
+
+// console.log(solution); // Elzero Web School
+
+// Check everything is saved

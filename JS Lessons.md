@@ -102,6 +102,7 @@
 #074 - Higher Order Functions - Filter Practice
 #075 - Higher Order Functions - Reduce
 #076 - Higher Order Functions - Reduce Practice
+#077 - Higher Order Functions - ForEach And Practice
 
 <!--Uploading to github  -->
 

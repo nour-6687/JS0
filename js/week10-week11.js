@@ -270,3 +270,37 @@ let finalString = removeChars
   });
 
 console.log(finalString);
+
+//!vid77
+/*
+  - forEach
+  --- method executes a provided function once for each array element.
+
+  Syntax forEach(callBackFunction(Element, Index, Array) { }, thisArg)
+  - Element => The current element being processed in the array.
+  - Index => The index of the current element being processed in the array.
+  - Array - The Current Array
+
+  Note
+  - Doesn't Return Anything [Undefined]
+  - Break Will Not Break The Loop
+  - Doesn't Create New Array Like Map, Filter, Reduce.
+*/
+
+let allLis = document.querySelectorAll(".uList77 li");
+let allDivs = document.querySelectorAll(".content div");
+
+allLis.forEach(function (ele) {
+  ele.onclick = function () {
+    // Remove Active Class From All Elements
+    allLis.forEach(function (ele) {
+      ele.classList.remove("active");
+    });
+    // Add Active Class To This Element
+    this.classList.add("active");
+    // Hide All Divs
+    allDivs.forEach(function (ele) {
+      ele.style.display = "none";
+    });
+  };
+});

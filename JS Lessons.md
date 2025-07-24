@@ -104,6 +104,21 @@
 #076 - Higher Order Functions - Reduce Practice
 #077 - Higher Order Functions - ForEach And Practice
 
+#### WEEK 11
+
+#079 - Object - Introduction
+#080 - Dot Notation vs Bracket Notation
+#081 - Nested Object And Advanced Trainings
+#082 - Create Object With New Keyword
+#083 - This Keyword
+#084 - Create Object With Create Method
+#085 - Create Object With Assign Method
+
+#### WEEK12
+
+#086 - What Is DOM And Select Elements
+#087 - Get Set Elements Content And Attributes
+
 <!--Uploading to github  -->
 
 If you create or edit new files, follow these steps to upload your changes to GitHub:

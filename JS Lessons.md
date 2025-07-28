@@ -118,6 +118,10 @@
 
 #086 - What Is DOM And Select Elements
 #087 - Get Set Elements Content And Attributes
+#088 - Check Attributes And Examples
+#089 - Create And Append Elements
+#090 - Product With Title And Description Practice
+#091 - Deal With Children's
 
 <!--Uploading to github  -->
 
@@ -127,7 +131,7 @@ Check what changed
 git status
 
 Add all new and changed files
-git add .
+git add . or git add -A
 
 Commit your changes with a message
 git commit -m "Describe your changes, e.g. Add week 11 lessons and update assignments"

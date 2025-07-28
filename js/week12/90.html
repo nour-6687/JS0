@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Video 90</title>
+  </head>
+  <body>
+    <script>
+      for (let i = 1; i <= 100; i++) {
+        let myDiv = document.createElement("div");
+        let myH = document.createElement("h2");
+        let myP = document.createElement("p");
+
+        let myHText = document.createTextNode(`Element Title ${i}`);
+        let myPText = document.createTextNode(`Element Description ${i}`);
+
+        myDiv.className = `product ${i}`;
+
+        myH.appendChild(myHText);
+        myP.appendChild(myPText);
+
+        myDiv.appendChild(myH);
+        myDiv.appendChild(myP);
+
+        document.body.appendChild(myDiv);
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Learn JavaScript</title>
+  </head>
+  <body>
+    <button id="btn">click me</button>
+    <form>
+      <label for="fname">First name:</label><br />
+      <input type="text" id="fname" name="fname" /><br />
+      <label for="lname">Last name:</label><br />
+      <input type="text" id="lname" name="lname" />
+    </form>
+    <script>
+      /*
+        DOM [Events]
+        - Use Events On HTML
+        - Use Events On JS
+        --- onclick
+        --- oncontextmenu
+        --- onmouseenter
+        --- onmouseleave
+
+        --- onload
+        --- onscroll
+        --- onresize
+
+        --- onfocus
+        --- onblur => opposite of onfocus
+        --- onsubmit
+      */
+
+      let myBtn = document.getElementById("btn");
+
+      myBtn.onmouseleave = function () {
+        console.log("Clicked");
+      };
+
+      window.onresize = function () {
+        console.log("Scroll");
+      };
+    </script>
+  </body>
+</html>

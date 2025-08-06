@@ -122,6 +122,8 @@
 #089 - Create And Append Elements
 #090 - Product With Title And Description Practice
 #091 - Deal With Children's
+#092 - DOM Events
+#093 - Validate Form And Prevent Default
 
 <!--Uploading to github  -->
 

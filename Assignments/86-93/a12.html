@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>A12</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        background: #f0f0f0;
+        padding: 20px;
+      }
+
+      .container {
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        max-width: 500px;
+        margin: 0 auto 20px;
+      }
+
+      h1 {
+        text-align: center;
+        color: #333;
+        margin-bottom: 20px;
+      }
+
+      .input {
+        width: 100%;
+        padding: 10px;
+        margin: 10px 0;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        font-size: 16px;
+      }
+
+      #createBtn {
+        background: #007bff;
+        color: white;
+        border: none;
+        padding: 15px 20px;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+        width: 100%;
+      }
+
+      #createBtn:hover {
+        background: #0056b3;
+      }
+
+      .results {
+        margin-top: 20px;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 10px;
+      }
+
+      .box {
+        background: #28a745;
+        color: white;
+        padding: 20px;
+        border-radius: 5px;
+        text-align: center;
+        font-weight: bold;
+      }
+
+      .section-box {
+        background: #dc3545;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Task One -->
+    <!-- <div id="elzero" class="element" name="js">Task One</div> -->
+
+    <!-- Task Two -->
+    <!-- <div>
+      <img decoding="async" src="#" alt="" />
+    </div>
+    <div>
+      <img decoding="async" src="#" alt="" />
+    </div>
+    <div>
+      <img decoding="async" src="#" alt="" />
+    </div>
+    <div>
+      <img decoding="async" src="#" alt="" />
+    </div>
+    <div>
+      <img decoding="async" src="#" alt="" />
+    </div>
+    <div>
+      <img decoding="async" src="#" alt="" />
+    </div>
+    <div>
+      <img decoding="async" src="#" alt="" />
+    </div>
+    <div>
+      <img decoding="async" src="#" alt="" />
+    </div>
+    <div>
+      <img decoding="async" src="#" alt="" />
+    </div>
+    <div>
+      <img decoding="async" src="#" alt="" />
+    </div> -->
+
+    <!-- Task Three -->
+    <!-- <form action="">
+      <input type="number" name="dollar" placeholder="USD Dollar" />
+      <div class="result">{0} USD Dollar = {0} Egyptian Pound</div>
+    </form> -->
+
+    <!-- Task Four -->
+    <!-- <div class="one" title="two">Two</div>
+    <div class="two" title="one">One</div> -->
+
+    <!-- Task Five -->
+
+    <!-- <img decoding="async" src="#" alt="One" />
+    <img decoding="async" src="#" />
+    <img decoding="async" src="#" alt="Three" />
+    <img decoding="async" src="#" />
+    <img decoding="async" src="#" /> -->
+
+    <!-- Task Six -->
+    <div class="container">
+      <h1>منشئ العناصر الديناميكية</h1>
+
+      <input
+        type="number"
+        id="elementsInput"
+        class="input"
+        placeholder="عدد العناصر"
+        min="1"
+        max="20"
+      />
+      <input type="text" id="textInput" class="input" placeholder="نص العنصر" />
+      <select id="typeSelect" class="input">
+        <option value="">اختر نوع العنصر</option>
+        <option value="Div">Div</option>
+        <option value="Section">Section</option>
+      </select>
+      <button id="createBtn" type="button">إنشاء العناصر</button>
+    </div>
+
+    <div class="results" id="results"></div>
+
+    <script>
+      // Task One
+      // let one = document.querySelector("#elzero");
+      // let two = document.querySelector(".element");
+      // let three = document.querySelector("[name = 'js']");
+      // let four = document.querySelector("div");
+      // let five = document.querySelectorAll("#elzero")[0];
+      // let six = document.querySelectorAll(".element")[0];
+      // let seven = document.querySelectorAll("[name = 'js']")[0];
+      // let eight = document.querySelectorAll("div")[0];
+      // let nine = document.getElementById("elzero");
+      // let ten = document.getElementsByClassName("element")[0];
+      // let eleven = document.getElementsByTagName("div")[0];
+      // let twelve = document.getElementsByName("js")[0];
+      // let thirteen = document.body.firstElementChild;
+      // let fourteen = document.body.children[0];
+      // let fifteen = document.body.childNodes[1];
+      // console.log(one);
+
+      // Task Two sol one
+      // for (let i = 0; i < 10; i++) {
+      //   let ig = document.getElementsByTagName("img")[i];
+      //   ig.setAttribute(
+      //     "src",
+      //     "https://elzero.org/wp-content/themes/elzero/imgs/logo.png"
+      //   );
+      //   ig.setAttribute("alt", "Elzero Logo");
+      //   console.log(ig);
+      // }
+      // Task Two sol two dynamic
+      // let myLogo = document.images;
+      // for (i = 0; i < myLogo.length; i++) {
+      //   myLogo[i].src =
+      //     "https://elzero.org/wp-content/themes/elzero/imgs/logo.png";
+      //   myLogo[i].alt = "Elzero Logo";
+      //   myLogo[i].style =
+      //     "background-color: blue; margin-bottom: 30px; padding: 30px";
+      // }
+
+      // Task Three
+      // Style form
+      // Object.assign(document.querySelector("form").style, {
+      //   background: "#f5f5f5",
+      //   padding: "20px",
+      //   borderRadius: "8px",
+      // });
+
+      // // Style input
+      // Object.assign(document.querySelector("input").style, {
+      //   width: "100%",
+      //   padding: "10px",
+      //   marginBottom: "15px",
+      //   border: "1px solid #ddd",
+      //   borderRadius: "4px",
+      //   fontSize: "16px",
+      // });
+
+      // // Style result
+      // Object.assign(document.getElementsByClassName("result")[0].style, {
+      //   background: "#e8f5e8",
+      //   padding: "15px",
+      //   borderRadius: "4px",
+      //   fontWeight: "bold",
+      //   textAlign: "center",
+      // });
+
+      // let input = document.querySelector("input");
+      // let result = document.getElementsByClassName("result")[0];
+
+      // input.oninput = function () {
+      //   result.innerHTML = `{${input.value}} USD Dollar = {${(
+      //     input.value * 15.6
+      //   ).toFixed(2)}} Egyptian Pound`;
+      // };
+
+      // Task Four
+      // let elOne = document.querySelector(".one");
+      // let elTwo = document.querySelector(".two");
+
+      // elOne.title = elOne.className;
+      // elTwo.title = elTwo.className;
+      // elOne.textContent = elOne.className.toUpperCase();
+      // elTwo.textContent = `${elTwo.className.toUpperCase()} ${
+      //   elTwo.attributes.length
+      // }`;
+
+      // console.log(elOne);
+      // console.log(elTwo);
+
+      // Task Five
+      // const imgs = document.getElementsByTagName("img");
+      // // console.log(imgs.length);
+      // for (let i = 0; i < imgs.length; i++) {
+      //   if (imgs[i].hasAttribute("alt")) {
+      //     imgs[i].setAttribute("alt", "Old");
+      //   } else {
+      //     imgs[i].setAttribute("alt", "Elzero New");
+      //   }
+      //   console.log(`${imgs[i].getAttribute("alt").valueOf("alt")}`);
+      // }
+
+      // Task Six
+      // الحصول على العناصر
+      const createBtn = document.getElementById("createBtn");
+      const elementsInput = document.getElementById("elementsInput");
+      const textInput = document.getElementById("textInput");
+      const typeSelect = document.getElementById("typeSelect");
+      const resultsDiv = document.getElementById("results");
+
+      // إضافة event listener للزر
+      createBtn.onclick = function () {
+        console.log("Button clicked!"); // للتأكد من أن الزر يعمل
+
+        // الحصول على القيم
+        const numberOfElements = parseInt(elementsInput.value);
+        const elementText = textInput.value;
+        const elementType = typeSelect.value;
+
+        console.log("Values:", numberOfElements, elementText, elementType);
+
+        // التحقق من البيانات
+        if (!numberOfElements || !elementText || !elementType) {
+          alert("يرجى ملء جميع الحقول");
+          return;
+        }
+
+        if (numberOfElements < 1 || numberOfElements > 20) {
+          alert("يجب أن يكون عدد العناصر بين 1 و 20");
+          return;
+        }
+
+        // مسح العناصر القديمة
+        resultsDiv.innerHTML = "";
+
+        // إنشاء العناصر الجديدة
+        for (let i = 1; i <= numberOfElements; i++) {
+          const element = document.createElement(elementType.toLowerCase());
+
+          if (elementType === "Section") {
+            element.className = "box section-box";
+          } else {
+            element.className = "box";
+          }
+
+          element.title = "Element";
+          element.id = "id-" + i;
+          element.textContent = elementText;
+
+          resultsDiv.appendChild(element);
+        }
+
+        console.log("Elements created successfully!");
+      };
+
+      // طريقة بديلة للتأكد من عمل الزر
+      createBtn.addEventListener("click", function () {
+        console.log("Event listener also triggered!");
+      });
+    </script>
+  </body>
+</html>

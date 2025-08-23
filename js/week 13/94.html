@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Index Video 94</title>
+  </head>
+  <body>
+    <form action="">
+      <input type="text" class="one" />
+      <input type="text" class="two" />
+      <a href="http://google.com" target="_blank">G00GLE</a>
+    </form>
+
+    <script>
+      let one = document.querySelector(".one");
+      let two = document.querySelector(".two");
+
+      window.onload = function () {
+        one.focus();
+      };
+      one.onblur = function () {
+        document.links[0].click();
+      };
+
+      // one.addEventListener("blur", function () {
+      //   document.querySelector('a[href="http://google.com"]').click();
+      // });
+    </script>
+  </body>
+</html>

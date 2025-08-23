@@ -124,6 +124,8 @@
 #091 - Deal With Children's
 #092 - DOM Events
 #093 - Validate Form And Prevent Default
+#094 - Event Simulation - Click Focus Blur
+#095 - Class List Object And Methods
 
 <!--Uploading to github  -->
 

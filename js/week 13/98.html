@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>98</title>
+  </head>
+  <body>
+    <div class="my-div">
+      <span class="one">Span one</span>
+      <!-- comment one -->
+      <span class="two">Span two</span>
+      <!-- comment two -->
+      <span class="three">Span three</span>
+
+      <script>
+        /*
+          DOM [Traversing]
+          - nextSibling
+          - previousSibling
+          - nextElementSibling
+          - previousElementSibling
+          - parentElement
+        */
+
+        let span = document.querySelector(".two");
+
+        console.log(span.parentElement);
+
+        span.onclick = function () {
+          span.parentElement.remove();
+        };
+      </script>
+    </div>
+  </body>
+</html>

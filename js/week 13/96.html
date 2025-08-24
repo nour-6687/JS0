@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" href="96.css" />
+    <title>Vid 96</title>
+  </head>
+  <body>
+    <div class="my-div">Div with class "my-div"</div>
+    <script>
+      /*
+        DOM [CSS]
+        - style
+        - cssText
+        - removeProperty(propertyName) [Inline, Stylesheet]
+        - setProperty(propertyName, value, priority)
+      */
+
+      let element = document.getElementById("my-div");
+
+      element.style.color = "red";
+      element.style.fontWeight = "bold";
+
+      element.style.cssText = "font-weight: bold; color: green; opacity: 0.9";
+
+      element.style.removeProperty("color");
+      element.style.setProperty("font-size", "40px", "important");
+
+      document.styleSheets[0].rules[0].style.removeProperty("line-height");
+      document.styleSheets[0].rules[0].style.setProperty(
+        "background-color",
+        "red",
+        "important"
+      );
+    </script>
+  </body>
+</html>

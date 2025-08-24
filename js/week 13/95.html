@@ -1,11 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Index Video 95</title>
-</head>
-<body>
-  
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="data:," />
+    <title>Index Video 95</title>
+  </head>
+  <body>
+    <div id="my-div" class="one two show test">Div with many classes</div>
+    <script>
+      const el = document.getElementById("my-div");
+      console.log(el.classList);
+      console.log(typeof el.classList);
+      console.log(el.classList.contains("show"));
+      console.log(el.classList.contains("nour"));
+      console.log(el.classList.item("3"));
+
+      el.onclick = function () {
+        // el.classList.add("new-class", "another-class");
+        el.classList.remove("one", "two");
+        // Toggle is add/remove
+        el.classList.toggle("show");
+      };
+    </script>
+  </body>
 </html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS 101 DOM challenge</title>
+  </head>
+  <body>
+    <script>
+      // Body styling
+      document.body.style.cssText =
+        "padding : 0; margin:0; font-family: Arial, sans-serif;font-size: 16px";
+
+      // navbar
+      const navbar = document.createElement("div");
+      navbar.className = "navbar";
+      navbar.style.height = "8vh";
+      navbar.style.display = "flex";
+      navbar.style.justifyContent = "space-between";
+      navbar.style.alignItems = "center";
+      // Navbar logo
+      const logo = document.createElement("h2");
+      logo.className = "logo";
+      logo.textContent = "Elzero";
+      logo.style.margin = "0";
+      logo.style.color = "green";
+      logo.style.paddingLeft = "1rem";
+      // Navbar links list
+      const nList = document.createElement("ul");
+      nList.style.listStyle = "none";
+      nList.style.display = "flex";
+      nList.style.margin = "0";
+      nList.style.padding = "0";
+      nList.style.paddingRight = "1rem";
+      // Define your links
+      const links = [
+        { text: "Home", url: "#" },
+        { text: "About", url: "#" },
+        { text: "Services", url: "#" },
+        { text: "Contact", url: "#" },
+      ];
+      // Create list items and links
+      links.forEach((link) => {
+        const li = document.createElement("li");
+        const a = document.createElement("a");
+
+        a.textContent = link.text;
+        a.href = link.url;
+        a.className = "nav-link";
+        a.style.textDecoration = "none";
+        a.style.color = "black";
+        a.style.opacity = "0.4";
+
+        li.style.marginLeft = "1rem";
+        li.appendChild(a);
+        nList.appendChild(li);
+      });
+
+      navbar.appendChild(logo);
+      navbar.appendChild(nList);
+      document.body.appendChild(navbar);
+
+      // Center div
+      const center = document.createElement("div");
+      // Define styles as an object
+      const centerStyles = {
+        className: "center",
+        height: "80vh",
+        backgroundColor: "lightGrey",
+        display: "grid",
+        gridTemplateColumns: "repeat(3, 1fr)",
+        gap: "20px",
+        padding: "20px",
+      };
+      // Apply styles
+      Object.assign(center.style, centerStyles);
+      center.className = centerStyles.className;
+      // Inner center items
+      for (let i = 0; i < 15; i++) {
+        const innerDiv = document.createElement("div");
+        innerDiv.className = `center-inner-div-${i + 1}`;
+        innerDiv.style.backgroundColor = "white";
+        innerDiv.style.borderRadius = "0.5rem";
+        innerDiv.style.display = "flex";
+        innerDiv.style.flexDirection = "column";
+        innerDiv.style.justifyContent = "center";
+        innerDiv.style.alignItems = "center";
+
+        // Create number element
+        const numberEl = document.createElement("span");
+        numberEl.className = `number-${i + 1}`;
+        numberEl.textContent = `${i + 1}`;
+
+        // Create a new product element for each div
+        const productEl = document.createElement("p");
+        productEl.className = `product-${i + 1}`;
+        productEl.innerText = "Product";
+        productEl.style.margin = "0";
+
+        innerDiv.appendChild(numberEl);
+        innerDiv.appendChild(productEl);
+        center.appendChild(innerDiv);
+      }
+
+      document.body.appendChild(center);
+
+      // Footer
+      const footer = document.createElement("div");
+      const copyRight = document.createElement("p");
+      footer.className = "footer";
+      footer.style.height = "8vh";
+      footer.style.backgroundColor = "#23a96e";
+      footer.style.display = "flex";
+      footer.style.alignItems = "center";
+      footer.style.justifyContent = "center";
+      copyRight.textContent = "© 2023 Elzero Web School";
+      copyRight.style.color = "white";
+      copyRight.style.fontWeight = "bold";
+      copyRight.style.margin = "0";
+
+      footer.appendChild(copyRight);
+      document.body.appendChild(footer);
+    </script>
+  </body>
+</html>

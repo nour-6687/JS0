@@ -126,7 +126,11 @@
 #093 - Validate Form And Prevent Default
 #094 - Event Simulation - Click Focus Blur
 #095 - Class List Object And Methods
-
+#096 - CSS Styling And Stylesheets
+#097 - Before, After, Prepend, Append, Remove
+#098 - DOM Traversing
+#099 - DOM Cloning
+#100 - AddEventListener
 <!--Uploading to github  -->
 
 If you create or edit new files, follow these steps to upload your changes to GitHub:

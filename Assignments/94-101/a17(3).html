@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="data:," />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="our-element">Our Element</div>
+    <p>Paragraph</p>
+    <script>
+      document.querySelectorAll("p").forEach((p) => p.remove());
+      let ourEl = document.querySelector(".our-element");
+      let beforeOur = document.createElement("div");
+      let afterOur = document.createElement("div");
+
+      // Insert elements
+      ourEl.parentNode.insertBefore(beforeOur, ourEl);
+      ourEl.parentNode.insertBefore(afterOur, ourEl.nextSibling);
+
+      // Set properties
+      beforeOur.textContent = "Element before our element";
+      beforeOur.className = "start";
+      beforeOur.title = "Start Element";
+      beforeOur.setAttribute("data-value", "Start"); // ✅ Fixed
+
+      afterOur.textContent = "Element after our element";
+      afterOur.className = "end";
+      afterOur.title = "End Element";
+      afterOur.setAttribute("data-value", "End"); // ✅ Fixed
+    </script>
+  </body>
+</html>

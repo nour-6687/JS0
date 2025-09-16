@@ -131,6 +131,20 @@
 #098 - DOM Traversing
 #099 - DOM Cloning
 #100 - AddEventListener
+#101 - DOM Challenge
+
+#### WEEK13
+
+#102 - What Is BOM?
+#103 - Alert, Confirm, Prompt
+#104 - setTimeout and clearTimeout
+#105 - setInterval and clearInterval
+#106 - Window Location Object
+#107 - Window Open And Close
+#108 - Window History Object
+#109 - Scroll, ScrollTo, ScrollBy, Focus, Print, Stop
+#110 - Scroll To Top Using Y Practice
+
 <!--Uploading to github  -->
 
 If you create or edit new files, follow these steps to upload your changes to GitHub:

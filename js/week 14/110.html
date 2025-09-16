@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        height: 5000px;
+      }
+      button {
+        background-color: cadetblue;
+        color: white;
+        font-weight: bold;
+        border: none;
+        border-radius: 10px;
+        padding: 10px;
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        cursor: pointer;
+        display: none;
+      }
+      div {
+        background-color: whitesmoke;
+        padding: 20px;
+        border-radius: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="content">
+      <h1>Scroll Down to See the Button</h1>
+      <p>
+        This is demo content. Keep scrolling down to see the "Back to Top"
+        button appear.
+      </p>
+    </div>
+    <button>Up</button>
+    <script>
+      /*
+        BOM [Browser Object Model]
+        - Practice => Scroll To Top
+        - scrollX [Alias => PageXOffset]
+        - scrollY [Alias => PageYOffset]
+      */
+      let btnUp = document.querySelector("button");
+      window.addEventListener("scroll", () => {
+        if (window.scrollY >= 700) {
+          btnUp.style.display = "block";
+        } else {
+          btnUp.style.display = "none";
+        }
+      });
+      btnUp.addEventListener("click", () => {
+        window.scrollTo({
+          top: 0,
+          left: 0,
+          behavior: "smooth",
+        });
+      });
+    </script>
+  </body>
+</html>

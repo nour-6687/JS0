@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Learn JavaScript A13</title>
+    <script>
+      // Your Code Here
+      window.addEventListener("DOMContentLoaded", () => {
+        for (const link of document.links) {
+          if (
+            link.classList.contains("open") &&
+            link.textContent === "Elzero"
+          ) {
+            setTimeout(() => link.click(), 5000);
+          }
+        }
+      });
+    </script>
+  </head>
+  <body>
+    <!-- https://elzero.org/javascript-bootcamp-assignments-lesson-from-094-to-101/ -->
+    <a class="open" href="https://google.com">Google</a>
+    <a class="open" href="https://elzero.org">Elzero</a>
+    <a class="not" href="https://facebook.com">Facebook</a>
+    <a class="linked" href="https://linkedin.com">Elzero</a>
+    <script src="main.js"></script>
+  </body>
+</html>

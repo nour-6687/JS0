@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>10</div>
+    <script>
+      let div = document.querySelector("div");
+      let windowOpened = false;
+
+      function countDown() {
+        div.textContent -= 1;
+        if (div.textContent <= 5 && !windowOpened) {
+          clearInterval(counter);
+          windowOpened = true;
+          window.open(
+            "https://google.com",
+            "_blank",
+            "width=800,height=600,left=100,top=100,scrollbars=yes,resizable=yes,menubar=no,toolbar=no,location=no,status=no"
+          );
+        }
+      }
+
+      let counter = setInterval(countDown, 1000);
+    </script>
+  </body>
+</html>

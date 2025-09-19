@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>10</div>
+    <script>
+      let div = document.querySelector("div");
+      function countDown() {
+        div.textContent -= 1;
+        if (div.textContent <= 0) {
+          clearInterval(counter);
+        }
+      }
+      let counter = setInterval(countDown, 1000);
+    </script>
+  </body>
+</html>

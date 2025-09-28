@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>#111 - Local Storage</title>
+  </head>
+  <body>
+    <script>
+      // Store data in local storage
+      localStorage.setItem("username", "JohnDoe");
+      localStorage.setItem("theme", "dark");
+      localStorage.setItem("color", "navy");
+
+      // Retrieve data from local storage
+      const username = localStorage.getItem("username");
+      const theme = localStorage.getItem("theme");
+
+      console.log("Username:", username); // Output: Username: JohnDoe
+      console.log("Theme:", theme); // Output: Theme: dark
+
+      // Remove data from local storage
+      localStorage.removeItem("theme");
+
+      document.body.style.backgroundColor = localStorage.getItem("color");
+
+      // Clear all data from local storage
+      // localStorage.clear();
+    </script>
+  </body>
+</html>

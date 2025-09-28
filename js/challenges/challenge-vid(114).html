@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BOM Challenge</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        height: 100vh;
+        margin: 0;
+      }
+      .form {
+        background: white;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+      label {
+        margin-right: 10px;
+      }
+      input[type="text"] {
+        padding: 5px;
+        margin-right: 10px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+      }
+      input[type="button"] {
+        padding: 5px 10px;
+        border: none;
+        background-color: #28a745;
+        color: white;
+        border-radius: 3px;
+        cursor: pointer;
+      }
+      input[type="button"]:hover {
+        background-color: #218838;
+      }
+      .tasks {
+        margin-top: 20px;
+        background-color: white;
+        padding: 10px;
+        border-radius: 5px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        width: 300px;
+        display: hidden;
+      }
+      .tasks div {
+        padding: 8px;
+        border: 1px solid #eee;
+        border-radius: 3px;
+        background-color: #ffffff;
+        display: flex;
+        justify-content: space-between;
+        
+      }
+      .delete {
+        background-color: rgb(200, 41, 41);
+        color: white;
+        border: none;
+        padding: 5px 10px;
+        border-radius: 3px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="form">
+      <label for="inp">Task Name:</label>
+      <input type="text" name="inp" class="inp" />
+      <input type="button" value="Add" class="add" />
+    </div>
+    <div class="tasks"></div>
+    <script>
+      let inp = document.querySelector(".inp");
+      let addBtn = document.querySelector(".add");
+      let divTasks = document.querySelector(".tasks");
+
+      // Function to get tasks from localStorage
+      function getTasks() {
+        const tasks = localStorage.getItem("tasks");
+        return tasks ? JSON.parse(tasks) : [];
+      }
+
+      // Function to save tasks to localStorage
+      function saveTasks(tasks) {
+        localStorage.setItem("tasks", JSON.stringify(tasks));
+      }
+
+      // Function to create a task element
+      function createTaskElement(taskText, taskId) {
+        let newDiv = document.createElement("div");
+        newDiv.setAttribute("data-task-id", taskId);
+
+        let deleteBtn = document.createElement("button");
+        deleteBtn.textContent = "Delete";
+        deleteBtn.classList.add("delete");
+
+        deleteBtn.addEventListener("click", () => {
+          // Remove from DOM
+          divTasks.removeChild(newDiv);
+
+          // Remove from localStorage
+          let tasks = getTasks();
+          tasks = tasks.filter((task) => task.id !== taskId);
+          saveTasks(tasks);
+        });
+
+        // Create a text node for the task content
+        let taskTextNode = document.createTextNode(taskText);
+        newDiv.appendChild(taskTextNode);
+        newDiv.appendChild(deleteBtn);
+
+        return newDiv;
+      }
+
+      // Function to load tasks from localStorage and display them
+      function loadTasks() {
+        const tasks = getTasks();
+        tasks.forEach((task) => {
+          const taskElement = createTaskElement(task.text, task.id);
+          divTasks.appendChild(taskElement);
+        });
+      }
+
+      // Add task event listener
+      addBtn.addEventListener("click", () => {
+        if (inp.value.trim() !== "") {
+          // Show the tasks container
+          divTasks.style.display = "block";
+          // Generate unique ID for the task
+          const taskId = Date.now().toString();
+
+          // Create task object
+          const newTask = {
+            id: taskId,
+            text: inp.value.trim(),
+          };
+
+          // Add to localStorage
+          let tasks = getTasks();
+          tasks.push(newTask);
+          saveTasks(tasks);
+
+          // Create and display task element
+          const taskElement = createTaskElement(newTask.text, newTask.id);
+          divTasks.appendChild(taskElement);
+
+          // Clear input
+          inp.value = "";
+        }
+      });
+
+      // Allow adding tasks by pressing Enter
+      inp.addEventListener("keypress", (e) => {
+        if (e.key === "Enter") {
+          addBtn.click();
+        }
+      });
+
+      // Load tasks when page loads
+      window.addEventListener("load", loadTasks);
+    </script>
+  </body>
+</html>

@@ -144,6 +144,9 @@
 #108 - Window History Object
 #109 - Scroll, ScrollTo, ScrollBy, Focus, Print, Stop
 #110 - Scroll To Top Using Y Practice
+#111 - Local Storage
+#112 - Local Storage Color Application Practice
+#113 - Session Storage And Use Cases
 
 <!--Uploading to github  -->
 

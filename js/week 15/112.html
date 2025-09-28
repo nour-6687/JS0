@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Learn JavaScript</title>
+    <style>
+      body {
+        background-color: #eee;
+      }
+      ul {
+        padding: 0;
+        margin: 0;
+        background-color: #ddd;
+        margin: 20px auto;
+        padding: 20px;
+        width: 400px;
+        list-style: none;
+        display: flex;
+        justify-content: space-between;
+      }
+      ul li {
+        width: 60px;
+        height: 60px;
+        border: 2px solid transparent;
+        opacity: 0.4;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+      ul li.active,
+      ul li:hover {
+        opacity: 1;
+      }
+      ul li:first-child {
+        background-color: red;
+      }
+      ul li:nth-child(2) {
+        background-color: green;
+      }
+      ul li:nth-child(3) {
+        background-color: blue;
+      }
+      ul li:nth-child(4) {
+        background-color: black;
+      }
+      .experiment {
+        background-color: red;
+        width: 600px;
+        height: 300px;
+        margin: 20px auto;
+      }
+    </style>
+  </head>
+  <body>
+    <ul>
+      <li class="active" data-color="red"></li>
+      <li data-color="green"></li>
+      <li data-color="blue"></li>
+      <li data-color="black"></li>
+    </ul>
+    <div class="experiment"></div>
+    <script>
+      /*
+      What Happens in the Click Event
+        You're absolutely right that in the click event:
+        exp.style.backgroundColor = localStorage.getItem("color");
+        This does apply the clicked color to the experiment div immediately.
+
+      But Here's the Key Issue
+      Two Different Color Sources:
+        CSS Default (in stylesheet):
+        .experiment {
+          background-color: red;   ← This is permanent CSS 
+          width: 600px;
+          height: 300px;
+          margin: 20px auto;
+          }
+        Inline Style (set by JavaScript):
+        exp.style.backgroundColor = "blue";  // ← This is temporary inline style  
+
+      What Happens During Page Reload
+        With the IF condition:
+        Page loads → Browser applies CSS default (red)
+        JavaScript runs → IF condition checks localStorage
+        IF condition applies saved color via exp.style.backgroundColor
+        Result: Saved color is restored ✅
+        Without the IF condition:
+        Page loads → Browser applies CSS default (red)
+        JavaScript runs → IF condition is missing, so localStorage is never checked
+        No JavaScript code runs to override the CSS default
+        Result: Always shows CSS default (red), even though localStorage contains the saved color ❌
+        The Problem Explained
+        localStorage DOES save the color (that part works)
+        The click event DOES apply the color immediately (that part works too)
+        But on page reload, there's no code to READ localStorage and restore the saved color
+        The IF condition is the bridge between the saved data and the visual display. Without it, the saved color exists in localStorage but is never retrieved and applied to the page.
+
+        Think of it like this:
+
+        Saving to localStorage = putting money in a safe
+        The IF condition = remembering the combination to open the safe
+        Without the IF condition = the money is still there, but you can't access it!
+
+      */
+      let lis = document.querySelectorAll("ul li");
+      let exp = document.querySelector(".experiment");
+
+      // localStorage.clear();
+      if (localStorage.getItem("color")) {
+        // add the color to the exp
+        exp.style.backgroundColor = localStorage.getItem("color");
+        // remove active class from all elements
+        lis.forEach((el) => {
+          el.classList.remove("active");
+        });
+        document
+          .querySelector(`[data-color="${localStorage.getItem("color")}"]`)
+          .classList.add("active");
+      }
+
+      lis.forEach((element) => {
+        element.addEventListener("click", (e) => {
+          // console.log(e.currentTarget.dataset.color);
+
+          // remove active class from all elements
+          lis.forEach((el) => {
+            el.classList.remove("active");
+          });
+          // add active class to the current element
+          e.currentTarget.classList.add("active");
+          // add color to local storage
+          localStorage.setItem("color", e.currentTarget.dataset.color);
+          // add the color to the exp
+          exp.style.backgroundColor = localStorage.getItem("color");
+        });
+      });
+    </script>
+  </body>
+</html>

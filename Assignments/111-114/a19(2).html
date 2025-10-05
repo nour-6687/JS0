@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>a19(2)</title>
+  </head>
+  <body>
+    <form action="GET">
+      <fieldset>
+        <legend>Add your information</legend>
+        <p>
+          <label for="name">Name:</label>
+          <input type="text" name="name" id="name" />
+        </p>
+        <p>
+          <label for="email">Email:</label>
+          <input type="email" name="email" id="email" />
+        </p>
+        <p>
+          <label for="phone">Phone:</label>
+          <input type="number" name="phone" id="phone" />
+        </p>
+      </fieldset>
+      <fieldset>
+        <legend>Choose your city</legend>
+        <select name="city" id="city">
+          <option value="alexandria">Alexandria</option>
+          <option value="cairo">Cairo</option>
+          <option value="port-saeed">Port Saeed</option>
+          <option value="banha">Banha</option>
+          <option value="aswan">Aswan</option>
+        </select>
+      </fieldset>
+    </form>
+    <p>
+      Using sessionStorage because when closing the window /tab the session
+      storage data is cleared, unlike localStorage.
+    </p>
+    <script>
+      const inputs = document.querySelectorAll("input");
+      const name = document.getElementById("name");
+      const email = document.getElementById("email");
+      const phone = document.getElementById("phone");
+      const selectDropBox = document.getElementById("city");
+
+      document.addEventListener("DOMContentLoaded", () => {
+        selectDropBox.addEventListener("change", selectCity);
+
+        if (sessionStorage.getItem("text")) {
+          name.value = sessionStorage.getItem("text");
+        }
+        if (sessionStorage.getItem("email")) {
+          email.value = sessionStorage.getItem("email");
+        }
+        if (sessionStorage.getItem("number")) {
+          phone.value = sessionStorage.getItem("number");
+        }
+        if (sessionStorage.getItem("selectedCity")) {
+          selectDropBox.value = sessionStorage.getItem("selectedCity");
+        }
+      });
+
+      inputs.forEach((element) => {
+        element.addEventListener("blur", () => {
+          console.log(`${element.type} is ${element.value}`);
+          sessionStorage.setItem(element.type, element.value);
+        });
+      });
+
+      function selectCity() {
+        sessionStorage.setItem("selectedCity", selectDropBox.value);
+      }
+
+      // No manual clearing needed - sessionStorage automatically clears when tab/window closes
+    </script>
+  </body>
+</html>

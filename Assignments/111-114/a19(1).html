@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&family=Cairo:wght@300;400;600;700&family=Roboto:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>assignment 19</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        /* outline: green 3px solid; */
+      }
+
+      body {
+        font-family: "Open Sans", sans-serif;
+        transition: all 0.3s ease;
+      }
+      .font-settings {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 20px;
+      }
+
+      /* Make select elements inherit color from body */
+      select {
+        color: inherit;
+        font-family: inherit;
+        font-size: inherit;
+        border: none;
+        border-radius: 10px;
+        padding: 5px 10px;
+        cursor: pointer;
+        transition: all 1s ease;
+        outline: none;
+      }
+
+      /* Make option elements inherit color too */
+      select option {
+        color: inherit;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="font-settings">
+      <div class="fonts">
+        <label for="fonts">Choose a font:</label>
+        <select name="fonts" id="fonts">
+          <option value="Open Sans">Open Sans</option>
+          <option value="Cairo">Cairo</option>
+          <option value="Roboto">Roboto</option>
+        </select>
+      </div>
+      <div class="colors">
+        <label for="colors">Choose a color:</label>
+        <select name="colors" id="colors">
+          <option value="black">Black</option>
+          <option value="red">Red</option>
+          <option value="blue">Blue</option>
+          <option value="green">Green</option>
+          <option value="yellow">Yellow</option>
+          <option value="white">White</option>
+        </select>
+      </div>
+      <div class="font-sizes">
+        <label for="font-sizes">Choose a font size:</label>
+        <select name="font-sizes" id="font-sizes">
+          <!-- Options will be populated by JavaScript -->
+        </select>
+      </div>
+    </div>
+    <div class="lorem">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi dignissimos
+      nesciunt sunt eligendi distinctio, excepturi perferendis neque obcaecati
+      soluta minus velit cum voluptas itaque necessitatibus rerum vel, sint
+      temporibus minima?
+    </div>
+    <script>
+      // Better practice: Use DOM manipulation after page loads
+      document.addEventListener("DOMContentLoaded", function () {
+        const fontSizeSelect = document.getElementById("font-sizes");
+        const fontSelect = document.getElementById("fonts");
+        const colorSelect = document.getElementById("colors");
+
+        // Populate font size options
+        const startSize = 16;
+        const endSize = 32;
+
+        for (let size = startSize; size <= endSize; size++) {
+          const option = document.createElement("option");
+          option.value = `${size}px`;
+          option.textContent = `${size}px`;
+          fontSizeSelect.appendChild(option);
+        }
+
+        // Add event listeners to the select elements
+        fontSelect.addEventListener("change", changeFontType);
+        colorSelect.addEventListener("change", changeColor);
+        fontSizeSelect.addEventListener("change", changeFontSize);
+
+        // Load saved preferences from localStorage
+        const savedFont = localStorage.getItem("fontFamily");
+        const savedColor = localStorage.getItem("fontColor");
+        const savedFontSize = localStorage.getItem("fontSize");
+
+        if (savedFont) {
+          document.body.style.fontFamily = `"${savedFont}", sans-serif`;
+          fontSelect.value = savedFont;
+        }
+        if (savedColor) {
+          document.body.style.color = savedColor;
+          colorSelect.value = savedColor;
+        }
+        if (savedFontSize) {
+          document.body.style.fontSize = savedFontSize;
+          fontSizeSelect.value = savedFontSize;
+        }
+      });
+
+      function changeFontType() {
+        const fontSelect = document.getElementById("fonts");
+        const selectedFont = fontSelect.value;
+
+        // Apply font with fallbacks
+        document.body.style.fontFamily = `"${selectedFont}", sans-serif`;
+
+        // Debug: log the font change
+        console.log("Font changed to:", selectedFont);
+        console.log("Applied font-family:", document.body.style.fontFamily);
+        // Add to localStorageL
+        localStorage.setItem("fontFamily", selectedFont);
+      }
+
+      function changeColor() {
+        const colorSelect = document.getElementById("colors");
+        document.body.style.color = colorSelect.value;
+        // Add to localStorageL
+        localStorage.setItem("fontColor", colorSelect.value);
+      }
+
+      function changeFontSize() {
+        const fontSizeSelect = document.getElementById("font-sizes");
+        document.body.style.fontSize = fontSizeSelect.value;
+        // Add to localStorageL
+        localStorage.setItem("fontSize", fontSizeSelect.value);
+      }
+    </script>
+  </body>
+</html>

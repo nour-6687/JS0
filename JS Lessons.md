@@ -147,6 +147,16 @@
 #111 - Local Storage
 #112 - Local Storage Color Application Practice
 #113 - Session Storage And Use Cases
+#114 - Challenge
+
+#### WEEK16
+
+#115 - Destructing Arrays Part 1
+#116 - Destructing Arrays Part 2
+#117 - Destructing Arrays Part 3 - Swap Variables
+#118 - Destructuring Objects Part 1
+#119 - Destructuring Objects Part 2
+#120 - Destructuring Function Parameters
 
 <!--Uploading to github  -->
 

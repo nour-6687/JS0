@@ -157,6 +157,21 @@
 #118 - Destructuring Objects Part 1
 #119 - Destructuring Objects Part 2
 #120 - Destructuring Function Parameters
+#121 - Destructuring extra
+#122 - Destructuring Challenge
+
+#### WEEK16
+
+#123 - Set Data Type And Methods
+#124 - Set vs WeakSet And Garbage Collector
+#125 - Map Data Type Vs Object
+#126 - Map Methods
+#127 - Map Vs WeakMap
+#128 - Array.from Method
+#129 - Array.copyWithin Method
+#130 - Array.some Method
+#131 - Array.every Method
+#132 - Spread Syntax And Use Cases
 
 <!--Uploading to github  -->
 

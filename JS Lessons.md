@@ -172,6 +172,18 @@
 #130 - Array.some Method
 #131 - Array.every Method
 #132 - Spread Syntax And Use Cases
+#134 - Intro And What Is Regular Expression
+#135 - Regular Expressions - Modifiers
+#136 - Regular Expressions - Ranges Part 1
+#137 - Regular Expressions - Ranges Part 2
+#138 - Regular Expressions - Character Classes Part 1
+#139 - Regular Expressions - Character Classes Part 2
+#140 - Regular Expressions - Quantifiers Part 1
+#141 - Regular Expressions - Quantifiers Part 2
+#142 - Regular Expressions - Quantifiers Part 3
+#143 - Regular Expressions - Replace With Pattern
+#144 - Regular Expressions - Form Validation
+#145 - Test Your Regular Expressions And Discussions
 
 <!--Uploading to github  -->
 

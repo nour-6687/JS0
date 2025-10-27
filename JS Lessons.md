@@ -185,6 +185,21 @@
 #144 - Regular Expressions - Form Validation
 #145 - Test Your Regular Expressions And Discussions
 
+#### WEEK 19
+
+#147 - OOP Introduction
+#148 - Constructor Function Introduction
+#149 - Constructor Function New Syntax
+#150 - Deal With Properties And Methods
+#151 - Update Properties And Built In Constructors
+#152 - Class Static Properties And Methods
+#153 - Class Inheritance
+#154 - Class Encapsulation
+#155 - Prototype Introduction
+#156 - Add To Prototype Chain And Extend Constructors
+#157 - Object Meta Data And Descriptor Part 1
+#158 - Object Meta Data And Descriptor Part 2
+
 <!--Uploading to github  -->
 
 If you create or edit new files, follow these steps to upload your changes to GitHub:

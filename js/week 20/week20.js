@@ -169,14 +169,13 @@ console.log(date9);
 // Start Time
 let start = new Date();
 
-// Operation
-for (let i = 0; i < 100000; i++) {
-  // document.write(`<div>${i}</div>`);
-  let div = document.createElement("div");
-  div.appendChild(document.createTextNode(i));
-  document.body.appendChild(div);
-}
-
+// Operation uncomment the loop operation to see the operation duration.
+// for (let i = 0; i < 100000; i++) {
+//   let div = document.createElement("div");
+//   div.appendChild(document.createTextNode(i));
+//   document.body.appendChild(div);
+// }
+//
 // Time End
 let end = new Date();
 
@@ -186,3 +185,89 @@ let duration = end - start;
 console.log(duration);
 
 // 164
+
+/*
+  Generators
+  - Generator Function Run Its Code When Required.
+  - Generator Function Return Special Object [Generator Object]
+  - Generators Are Iterable
+*/
+
+function* generateNumbers() {
+  yield 1;
+  console.log("Hello After Yield 1");
+  yield 2;
+  yield 3;
+  yield 4;
+}
+
+let generator = generateNumbers();
+
+console.log(typeof generator);
+console.log(generator);
+
+console.log(generator.next());
+console.log(generator.next());
+console.log(generator.next());
+console.log(generator.next());
+console.log(generator.next());
+
+// It will loop normally because it uses the generator function directly
+// Not the generator variable.
+for (let value of generateNumbers()) {
+  console.log(value);
+}
+
+// The generator variable is empty because the next in the console.log()
+// So the loop can't print anything.
+for (let value of generator) {
+  console.log(value);
+}
+
+//165
+
+function* generateLetters() {
+  yield "A";
+  yield "B";
+  yield "C";
+}
+
+function* allGeneratorFunctions() {
+  yield* generateNumbers();
+  yield* generateLetters();
+  yield* ["nour", "mamdouh", "Elsayed"];
+}
+
+const generatorAll = allGeneratorFunctions();
+
+console.log(generatorAll.next());
+console.log(generatorAll.next());
+console.log(generatorAll.next());
+console.log(generatorAll.next());
+console.log(generatorAll.next());
+console.log(generatorAll.next());
+console.log(generatorAll.next());
+console.log(generatorAll.next());
+console.log(generatorAll.next());
+console.log(generatorAll.next());
+// The return ends the generation and may add return value like the example or may leave it empty.
+console.log(generatorAll.return("full name"));
+console.log(generatorAll.next());
+
+// 166
+
+function* infiniteNumbers() {
+  let index = 0;
+  while (true) {
+    yield index++;
+  }
+}
+const infiniteN = infiniteNumbers();
+console.log(infiniteN.next());
+console.log(infiniteN.next());
+console.log(infiniteN.next());
+console.log(infiniteN.next());
+
+// 167
+// 168
+// export.js file and import.js file

@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "Title": "First Title",
+    "Article_Name": "First Article",
+    "Author": "First Author",
+    "Section": "Comedy",
+    "Content": "First Article Content"
+  },
+  {
+    "id": 2,
+    "Title": "Second Title",
+    "Article_Name": "Second Article",
+    "Author": "Second Author",
+    "Section": "Drama",
+    "Content": "Second Article Content"
+  },
+  {
+    "id": 1,
+    "Title": "Third Title",
+    "Article_Name": "Third Article",
+    "Author": "Third Author",
+    "Section": "Action",
+    "Content": "Third Article Content"
+  }
+]

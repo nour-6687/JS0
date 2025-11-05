@@ -226,6 +226,19 @@
 #177 - Request And Response From Real API
 #178 - Loop On Data
 
+#### WEEK 22
+
+#179 - Callback Hell Or Pyramid Of Doom
+#180 - Promise Intro And Syntax
+#181 - Promise - Then, Catch And Finally
+#182 - Promise And XHR
+#183 - Fetch API
+#184 - Promise All And All Settled And Race
+#185 - Async And Training
+#186 - Await And Training
+#187 - Try, Catch And Finally With Fetch
+#188 - The End And Advices
+
 <!--Uploading to github  -->
 
 If you create or edit new files, follow these steps to upload your changes to GitHub:
